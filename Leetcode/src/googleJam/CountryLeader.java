@@ -4,11 +4,12 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class CountryLeader {
 	
-	ArrayList<Character> list = new ArrayList<>();
+	
 	
 	public CountryLeader(Scanner in) {
 		
@@ -61,15 +62,17 @@ public class CountryLeader {
 		in.close();
 
 	}
+	//这个计算不同字符数方法不好，重写
 	public int differLetter(String str){
 		int count = 0;
+		List<Character> list = new ArrayList<>();
 		for(int i=0;i<str.length();i++){
 			if(!list.contains(str.charAt(i)) && (str.charAt(i)!=' ')){
 				list.add(str.charAt(i));//使用了26个额外的空间复杂度，但是常数级空间算O(1)还是O(N)
 				count++;
 			}
 		}
-		list.clear();
+		//list.clear();每次clear需要额外O(N)时间，不划算
 		return count;
 	}
 

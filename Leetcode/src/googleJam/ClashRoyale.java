@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 //这道题分两次暴力枚举，前四张牌和后四张牌，本来筛选后排序，可以删除掉无效数据，但是不会删，所以没有用queue
-//large的话，同样枚举，c（12,8）很小不影响，每次从12张中选出8张牌，计算每8张牌的resA power值并取最大（没写）
+//large的话，同样枚举，c（12,8）很小不影响，每次从12张中选出8张牌，计算每8张牌的resA power值并取最大（没写）,small case 应该是用背包问题解法求
 public class ClashRoyale {
 
 	/**

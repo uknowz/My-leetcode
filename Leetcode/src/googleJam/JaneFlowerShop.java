@@ -40,7 +40,8 @@ public class JaneFlowerShop {
 		while(high - low>=0.000000000001){//这只是控制了小数点后12位的精度，但如果high，low并不相等，到达小数点后13位且方程值仍不为0的话，就会跳出循环
 			double middle = (low+high)/2;//>>1只有int型有
 			BigDecimal value = compute(c,m,middle);
-			if(value.compareTo(new BigDecimal(0.0))==0) return middle;//Double.valueOf(double d)是double的包装类，将基本类型转换为类的对象
+			if(value.compareTo(new BigDecimal(0.0))==0) 
+				return middle;//Double.valueOf(double d)是double的包装类，将基本类型转换为类的对象
 			else if(value.compareTo(new BigDecimal(0.0))>0){
 				low = middle + 0.000000000001;//因为在区间里，函数值value是逆序的
 			}else if(value.compareTo(new BigDecimal(0.0))<0){

@@ -44,7 +44,11 @@ public class Travel {
 		}
 	}
 	//dijkstra求最短路径,s时刻的路径信息
-	
+	void minHours(ArrayList<Integer> list,Roads[][] rout,PriorityQueue<Integer> queue,int N,int s){
+		int[][] dis = new int[N][24];
+		
+		
+	}
 	
 	public static void main(String[] args) {
 		// TODO 自动生成的方法存根
