@@ -23,7 +23,7 @@ public class SherlockandParentheses {
 	public long balance(int l,int r){
 		long balsub = Math.min(l, r);
 		long result = balsub*(balsub+1)>>1;//当large case的时候，不要只想着输入的整数长度，还要考虑计算后的结果长度
-		return result; //int不能转换为long
+		return result; //int可以转换long，但计算结果可能超过int
 		
 	}
 	public static void main(String[] args) throws IOException {

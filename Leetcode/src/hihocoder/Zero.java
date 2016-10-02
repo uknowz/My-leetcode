@@ -9,10 +9,23 @@ import java.util.Scanner;
 
 public class Zero{
 	 
+	public int maxChunk(int[] a){
+		int fp= a.length;
+		int n = a.length;
+		int imax = 0;
+		for(int i=1;i<n;i++){
+			if(a[i]>a[imax])
+				imax = i;
+			else
+				fp -= 1;
+		}
+		return fp;
+	}
 	public static void main(String[] args){
-		int a = 9;
-		int c = 0;
-		long b = a + c;
+		Zero ex = new Zero();
+		int[] a = {3,2,1};
+		System.out.println(ex.maxChunk(a));
+	
 	
 
 	}

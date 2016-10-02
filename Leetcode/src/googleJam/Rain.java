@@ -65,7 +65,7 @@ public class Rain {
 			vis[i][j] = true;//判断该节点是否被访问
 			//curH = queue.poll().h;
 			queue.add(new Grid(i, j, Math.max(curH, h[i][j])));
-			return Math.max(0, curH-h[i][j]);
+			return Math.max(0, curH-h[i][j]);//保持储水量非负性
 			}
 		}
 	class Grid{//每一个网格的参数需要储存i，j，h
