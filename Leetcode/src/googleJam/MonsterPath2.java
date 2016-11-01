@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
-
+//在别人代码上修改的
 public class MonsterPath2{
 	double max;
 	MonsterPath2(Scanner in){

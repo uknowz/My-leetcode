@@ -22,6 +22,7 @@ public class CountRepeat {
 		}
 		return false;
 	}
+	// time o(n) space o(n)
 	boolean repeat2(int[] a){
 		Set<Integer> set = new HashSet<>();
 		for(int temp:a){

@@ -3,7 +3,7 @@ package algorithm;
 import java.util.Arrays;
 
 public class HeapSort2 {
-//这一版三个函数比较清晰
+//这一版三个函数比较清晰，两个版本，递归空间复杂度O(logn)，非递归O(1)
 	/**
 	 * @param args
 	 */
@@ -14,8 +14,14 @@ public class HeapSort2 {
 		heapSize = this.a.length;
 		heapsort(this.a);
 	}
+	private  void swap(int[] data, int i, int j) {  
+        // TODO Auto-generated method stub  
+        int tmp=data[i];  
+        data[i]=data[j];  
+        data[j]=tmp;  
+    } 
 
-	//大堆化
+	//大堆化递归版
 	public void maxHeapify(int[] data,int i){
 		//int n = data.length;
 		int position = i;//假设i最大
@@ -27,10 +33,26 @@ public class HeapSort2 {
 		if(right<heapSize && data[position]<data[right])
 			position = right;
 		if(position!=i){
-			int temp = data[i];
-			data[i] = data[position];
-			data[position] = temp;
+			swap(data,i,position);
 			maxHeapify(data, position);
+		}
+	}
+	//非递归版
+	public void maxHeapify2(int[] data,int index){
+		for(int i =index;i<heapSize;){
+			int position = i;
+			int left = i*2+1;
+			int right = i*2+2;
+			if(left<heapSize && data[left]>data[position])
+				position = left;
+			if(right<heapSize && data[right]>data[position])
+				position = right;
+			if(i==position)
+				break;
+			else{
+				swap(data,i,position);
+				i = position;
+			}
 		}
 	}
 	public void buildHeap(int[] data){
@@ -44,19 +66,18 @@ public class HeapSort2 {
 		buildHeap(data);//只需要建一次最大堆
 		System.out.println("开始排序");
 		for(int i=heapSize-1;i>0;i--){			
-			int temp = data[0];
-			data[0] = data[i];
-			data[i] = temp;
+			swap(data,0,i);
 			heapSize--;//每次排序需要将数组长度减一
-			System.out.println(Arrays.toString(data));
+			//System.out.println(Arrays.toString(data));
 			maxHeapify(data, 0);//后面交换后微调大堆化即可
 			
 		}
 	}
 	public static void main(String[] args) {
 		// TODO 自动生成的方法存根
-		int[] a = {49,38,65,97,76,13,27,49,78,3};
+		int[] a = {54,35,48,36,27,12,44,44,8,14,26,17,28};
 		new HeapSort2(a);
+		System.out.println(Arrays.toString(a));
 
 	}
 

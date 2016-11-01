@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
-
+//这道题为伯特兰投票，卡特兰数
 public class Vote {
 
 	/**
@@ -25,7 +25,7 @@ public class Vote {
 		if(n<=m)
 			return 0;
 		else{
-			return (n-m)/(n+m);
+			return (n-m)/(n+m);//伯特兰投票定理
 		}
 	}
 	public static void main(String[] args) throws FileNotFoundException {

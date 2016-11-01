@@ -26,11 +26,10 @@ public class MergeSort {
 		int end2 = end;
 		mergesort(arry, result, start1, end1);
 		mergesort(arry, result, start2, end2);
-		int k = start;//在递归函数后面解决问题，是归来时的操作，start为递归变量start1和start2
+		int k = start1;//在递归函数后面解决问题，是归来时的操作，start为递归变量start1
 		//从两个数组中取出最小的放入合并数组  
 		while(start1<=end1 && start2<=end2){
-			result[k] = arry[start1]<arry[start2]?arry[start1]:arry[start2];
-			k++; start1++;start2++;
+			result[k++] = arry[start1]<arry[start2]?arry[start1++]:arry[start2++];
 		}
 		//剩余部分依次放入合并数组  
 		while(start1<=end1){

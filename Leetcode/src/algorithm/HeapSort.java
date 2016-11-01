@@ -1,7 +1,7 @@
-package mycode;
+package algorithm;
 
 import java.util.Arrays;  
-
+//非递归代码,空间复杂度O(1)
 public class HeapSort {  
     int[] a={49,38,65,97,76,13,27,49,78,3};  
     public  HeapSort(){  

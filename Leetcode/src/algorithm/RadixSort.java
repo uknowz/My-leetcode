@@ -14,7 +14,7 @@ public class RadixSort {
 	    int length=array.length;
 	    int[][] bucket=new int[10][length+1];//排序桶用于保存每次排序后的结果，这一位上排序结果相同的数字放在同一个桶里
 	    int[] order=new int[10];//用于保存每个桶里有多少个数字
-	    while(n<=d)
+	    while(n<=d) //d为未排序数组中max数
 	    {
 	    	int k= 0;
 	        for(int num:array) //将数组array里的每个数字放在相应的桶里
@@ -44,7 +44,7 @@ public class RadixSort {
 	}
 	public static void main(String[] args) {
 		// TODO 自动生成的方法存根
-		int[] A=new int[]{73,22, 93, 43, 55, 14, 28, 65, 39, 81};
+		int[] A=new int[]{73,22, 93, 43, 55, 14, 28, 65, 39, 81,100};
 	    radixSort(A, 100);
 	    System.out.println(Arrays.toString(A));
 
