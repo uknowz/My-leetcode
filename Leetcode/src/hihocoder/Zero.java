@@ -25,7 +25,8 @@ public class Zero{
 		Zero ex = new Zero();
 		int[] a = {3,2,1};
 		System.out.println(ex.maxChunk(a));
-	
+		String s = "nihao";
+		s.toUpperCase();
 	
 
 	}
