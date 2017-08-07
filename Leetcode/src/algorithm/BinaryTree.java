@@ -1,8 +1,8 @@
-// BinaryTree.java£¬Õâ¸öÊÇ¶ş²æÊ÷½¨Ê÷¹ı³Ì
+// BinaryTree.javaï¼Œè¿™ä¸ªæ˜¯äºŒå‰æ ‘å»ºæ ‘è¿‡ç¨‹
 package algorithm;
   
 public class BinaryTree {
-	class Node {//ÄÚ²¿Àà£¬Ö»ÓĞ¶¨ÒåËüµÄÀà¿ÉÒÔ·ÃÎÊ
+	class Node {//å†…éƒ¨ç±»ï¼Œåªæœ‰å®šä¹‰å®ƒçš„ç±»å¯ä»¥è®¿é—®
 	    Node left ;
 	    Node right ;
 	    int data ;
@@ -13,47 +13,47 @@ public class BinaryTree {
 	    }
 	  }
   // Root node pointer. Will be null for an empty tree.
-  private Node root ;//ÊµÀı±äÁ¿ºÍÀà±äÁ¿¶¼ÊÇÈ«¾Ö±äÁ¿£¬ÔÚÀàÖĞ¶¨Òå,Ë½ÓĞ±äÁ¿£¬²»ÄÜËæÒâ¸Ä¶¯
+  private Node root ;//å®ä¾‹å˜é‡å’Œç±»å˜é‡éƒ½æ˜¯å…¨å±€å˜é‡ï¼Œåœ¨ç±»ä¸­å®šä¹‰,ç§æœ‰å˜é‡ï¼Œä¸èƒ½éšæ„æ”¹åŠ¨
   
-  public Node getRoot(){//»ñÈ¡Ë½ÓĞ±äÁ¿
+  public Node getRoot(){//è·å–ç§æœ‰å˜é‡
 	  return root;
   }
   /**
    Creates an empty binary tree -- a null root pointer.
   */
   public BinaryTree() {
-    root = null ;//È«¾Ö±äÁ¿£¬¸øroot¸³³õÖµ£¬½¨Á¢¿ÕÊ÷
+    root = null ;//å…¨å±€å˜é‡ï¼Œç»™rootèµ‹åˆå€¼ï¼Œå»ºç«‹ç©ºæ ‘
   }
   /**
    Inserts the given data into the binary tree.
    Uses a recursive helper.
   */
   public void insert(int data){
-	  root = insert(root,data);//¸øroot¸³Öµ£¬·ñÔòrootÒ»Ö±Îªnull£¬Ã¿´Îµ÷ÓÃµÄÊ±ºò£¬¶¼ÊÇ´Óroot¿ªÊ¼£¬ËùÒÔ·µ»ØÖµÎªroot²»ÊÇnew node
+	  root = insert(root,data);//ç»™rootèµ‹å€¼ï¼Œå¦åˆ™rootä¸€ç›´ä¸ºnullï¼Œæ¯æ¬¡è°ƒç”¨çš„æ—¶å€™ï¼Œéƒ½æ˜¯ä»rootå¼€å§‹ï¼Œæ‰€ä»¥è¿”å›å€¼ä¸ºrootä¸æ˜¯new node
   }
   /**
    Recursive insert -- given a node pointer, recur down and
    insert the given data into the tree. Returns the new
    node pointer (the standard way to communicate
    a changed pointer back to the caller).
-    ¸Ã·½·¨Ê¹ÓÃµİ¹éËã·¨£¬¼òµ¥Ò×¶®£¬µ«±ÈÑ­»·µÄĞÔÄÜ²î£¬×¢ÒâÓĞ·µ»ØÖµ£¬ÀûÓÃ·½·¨µÄ·µ»ØÖµ£¬¸³Öµ½ÚµãÒıÓÃ¡£µ±Åª²»¶®Ëã·¨µÄÊ±ºò£¬Ò»²½Ò»²½debug
+    è¯¥æ–¹æ³•ä½¿ç”¨é€’å½’ç®—æ³•ï¼Œç®€å•æ˜“æ‡‚ï¼Œä½†æ¯”å¾ªç¯çš„æ€§èƒ½å·®ï¼Œæ³¨æ„æœ‰è¿”å›å€¼ï¼Œåˆ©ç”¨æ–¹æ³•çš„è¿”å›å€¼ï¼Œèµ‹å€¼èŠ‚ç‚¹å¼•ç”¨ã€‚å½“å¼„ä¸æ‡‚ç®—æ³•çš„æ—¶å€™ï¼Œä¸€æ­¥ä¸€æ­¥debug
   */
-  private Node insert(Node node, int data) {//½¨Ê÷¹æÔò£¬½«ÊıÖµĞ¡µÄ·Åµ½×ó×ÓÊ÷£¬´óµÄ·Åµ½ÓÒ×ÓÊ÷
+  private Node insert(Node node, int data) {//å»ºæ ‘è§„åˆ™ï¼Œå°†æ•°å€¼å°çš„æ”¾åˆ°å·¦å­æ ‘ï¼Œå¤§çš„æ”¾åˆ°å³å­æ ‘
     if (node== null ) {
-      node = new Node(data);//½¨Á¢ĞÂµÄ½Úµã£¬µ«ÊÇÊÇ¸øĞÎ²Î½¨Á¢¶ÔÏóÒıÓÃ£¬º¯ÊıµÄµ÷ÓÃ²»»áÓ°ÏìÊµ²Î£¬new nodeÊ¹µÃnodeµÄÒıÓÃ²»¶Ï¸Ä±ä£¬µ«µ÷ÓÃinsertÊ±´«ÈëµÄÊµ²ÎÒıÓÃ²¢ÎŞ¸Ä±ä£¬¶øÎÒÃÇ½¨Ê÷ÓÃµÄÊÇÊµ²Î£¬±éÀú
-      //Ê±£¬Ê¹ÓÃµÄ¶ÔÏóÊÇÊµ²ÎÒıÓÃµÄ¶ÔÏó£¬ËùÒÔ±ØĞë¸³Öµ£¬½«ĞÎ²ÎµÄÒıÓÃ´«µİ¸øÊµ²Î£¬Êµ²ÎÒıÓÃµÄ¶ÔÏó²ÅÓĞ¸Ä±ä¡£²»¹ıÓĞÒ»µã£¬Èç¹û·½·¨ÄÚĞÎ²ÎÒıÓÃµÄ¶ÔÏóÖµÓĞ¸Ä±ä£¬Êµ²ÎµÄ¶ÔÏóÒ²»á¸Ä±ä£¬ÒòÎªËûÃÇÊÇÖ¸ÏòÒ»¸ö¶ÔÏóµÄ
+      node = new Node(data);//å»ºç«‹æ–°çš„èŠ‚ç‚¹ï¼Œä½†æ˜¯æ˜¯ç»™å½¢å‚å»ºç«‹å¯¹è±¡å¼•ç”¨ï¼Œå‡½æ•°çš„è°ƒç”¨ä¸ä¼šå½±å“å®å‚ï¼Œnew nodeä½¿å¾—nodeçš„å¼•ç”¨ä¸æ–­æ”¹å˜ï¼Œä½†è°ƒç”¨insertæ—¶ä¼ å…¥çš„å®å‚å¼•ç”¨å¹¶æ— æ”¹å˜ï¼Œè€Œæˆ‘ä»¬å»ºæ ‘ç”¨çš„æ˜¯å®å‚ï¼Œéå†
+      //æ—¶ï¼Œä½¿ç”¨çš„å¯¹è±¡æ˜¯å®å‚å¼•ç”¨çš„å¯¹è±¡ï¼Œæ‰€ä»¥å¿…é¡»èµ‹å€¼ï¼Œå°†å½¢å‚çš„å¼•ç”¨ä¼ é€’ç»™å®å‚ï¼Œå®å‚å¼•ç”¨çš„å¯¹è±¡æ‰æœ‰æ”¹å˜ã€‚ä¸è¿‡æœ‰ä¸€ç‚¹ï¼Œå¦‚æœæ–¹æ³•å†…å½¢å‚å¼•ç”¨çš„å¯¹è±¡å€¼æœ‰æ”¹å˜ï¼Œå®å‚çš„å¯¹è±¡ä¹Ÿä¼šæ”¹å˜ï¼Œå› ä¸ºä»–ä»¬æ˜¯æŒ‡å‘ä¸€ä¸ªå¯¹è±¡çš„
     }
     else {
       if (data <= node. data ) {
-       node.left = insert(node. left , data);//¸ø×ó×Ó½Úµã¸³Öµ£¬¶ÔÕâ¸öinsertº¯ÊıÓĞÎÊÌâ£¬ÎªÊ²Ã´ÒıÓÃÒÑ¾­×÷ÎªÊµ²Î´«½øÈ¥ÁË£¬È´»¹ĞèÒª·µ»ØÖµÖØĞÂ¸³ÖµÄØ£¬ÒòÎª·½·¨ÄÚ²¿ĞÎ²ÎÒıÓÃµÄ¸Ä±ä²»»áÓ°ÏìÊµ²ÎµÄÒıÓÃ
-       //ÒâË¼ÊÇ£¬ÎÒ½¨Ê÷ÊÇ´ÓrootÕâ¸öÈ«¾Ö±äÁ¿¿ªÊ¼µÄ£¬ËæºóµÄ±éÀúÒ²ÊÇ´ÓËû¿ªÊ¼£¬ËùÒÔroot±ØĞë²»¶Ï±ä»¯£¬¼Ó½Úµã£¬µ«ÊÇinsertº¯Êınew nodeµÄÊ±ºò£¬¸Ä±äµÄÊÇĞÎ²ÎnodeÒıÓÃ£¨Ã¿newÒ»¸ö¶ÔÏó£¬ĞÎ²ÎnodeµÄµØÖ·Öµ¸Ä±ä£¬¾ÍÊÇÒıÓÃ¸Ä±ä
-      //×¢Òâ£¡ÕâÀï°Ñinsert·µ»ØÖµ¸³Öµ¸ønode.left£¬ÈÔÈ»ÊÇ½«ĞÎ²ÎÒıÓÃ´«³öÀ´¸øÊµ²Î£¬ÒòÎªµİ¹éËã·¨ÖĞ£¬µ÷ÓÃµÚ¶ş´Îº¯ÊıÊµ²Î£¬¾ÍÊÇµÚÒ»¸öº¯Êı¶îĞÎ²Î£¬ËùÒÔnode.leftÃ»´í
+       node.left = insert(node. left , data);//ç»™å·¦å­èŠ‚ç‚¹èµ‹å€¼ï¼Œå¯¹è¿™ä¸ªinsertå‡½æ•°æœ‰é—®é¢˜ï¼Œä¸ºä»€ä¹ˆå¼•ç”¨å·²ç»ä½œä¸ºå®å‚ä¼ è¿›å»äº†ï¼Œå´è¿˜éœ€è¦è¿”å›å€¼é‡æ–°èµ‹å€¼å‘¢ï¼Œå› ä¸ºæ–¹æ³•å†…éƒ¨å½¢å‚å¼•ç”¨çš„æ”¹å˜ä¸ä¼šå½±å“å®å‚çš„å¼•ç”¨
+       //æ„æ€æ˜¯ï¼Œæˆ‘å»ºæ ‘æ˜¯ä»rootè¿™ä¸ªå…¨å±€å˜é‡å¼€å§‹çš„ï¼Œéšåçš„éå†ä¹Ÿæ˜¯ä»ä»–å¼€å§‹ï¼Œæ‰€ä»¥rootå¿…é¡»ä¸æ–­å˜åŒ–ï¼ŒåŠ èŠ‚ç‚¹ï¼Œä½†æ˜¯insertå‡½æ•°new nodeçš„æ—¶å€™ï¼Œæ”¹å˜çš„æ˜¯å½¢å‚nodeå¼•ç”¨ï¼ˆæ¯newä¸€ä¸ªå¯¹è±¡ï¼Œå½¢å‚nodeçš„åœ°å€å€¼æ”¹å˜ï¼Œå°±æ˜¯å¼•ç”¨æ”¹å˜
+      //æ³¨æ„ï¼è¿™é‡ŒæŠŠinsertè¿”å›å€¼èµ‹å€¼ç»™node.leftï¼Œä»ç„¶æ˜¯å°†å½¢å‚å¼•ç”¨ä¼ å‡ºæ¥ç»™å®å‚ï¼Œå› ä¸ºé€’å½’ç®—æ³•ä¸­ï¼Œè°ƒç”¨ç¬¬äºŒæ¬¡å‡½æ•°å®å‚ï¼Œå°±æ˜¯ç¬¬ä¸€ä¸ªå‡½æ•°é¢å½¢å‚ï¼Œæ‰€ä»¥node.leftæ²¡é”™
       }
       else {
-       node.right = insert(node. right , data);//¸øÓÒ×Ó½Úµã¸³Öµ
+       node.right = insert(node. right , data);//ç»™å³å­èŠ‚ç‚¹èµ‹å€¼
       }
     }
-    return node; // in any case, return the new pointer to the caller,Ã¿´ÎÖ´ĞĞinsert£¬·µ»ØµÄnode¶¼ÊÇ´Óroot¿ªÊ¼µÄËùÓĞ½Úµã£¬¶ø²»ÊÇÃ¿Ò»¸önewµÄĞÂ½Úµã
+    return node; // in any case, return the new pointer to the caller,æ¯æ¬¡æ‰§è¡Œinsertï¼Œè¿”å›çš„nodeéƒ½æ˜¯ä»rootå¼€å§‹çš„æ‰€æœ‰èŠ‚ç‚¹ï¼Œè€Œä¸æ˜¯æ¯ä¸€ä¸ªnewçš„æ–°èŠ‚ç‚¹
   }
   public void buildTree( int [] data){
     for ( int i=0;i<data. length ;i++){
@@ -63,15 +63,12 @@ public class BinaryTree {
 
   }
   /*
-  public void printTree() {//¸ø±éÀú·½·¨£¬´«Èë¸ù½Úµãroot
-
+  public void printTree() {//ç»™éå†æ–¹æ³•ï¼Œä¼ å…¥æ ¹èŠ‚ç‚¹root
       printTree( root );
-
       System. out .println();
-
      }
      */
-  private void inOrderPrint(Node node) {//ÖĞĞò±éÀú
+  private void inOrderPrint(Node node) {//ä¸­åºéå†
 
       if (node == null ) return ;
       // left, node itself, right
@@ -96,6 +93,6 @@ public class BinaryTree {
 	  int[] data = {5,3,7,8,1,2,0};
 	  tree.buildTree(data);
 	  
-	  tree.inOrderPrint(tree.getRoot());//rootÊÇÊµÀı±äÁ¿£¬Ò²¾ÍÊÇ
+	  tree.inOrderPrint(tree.getRoot());//rootæ˜¯å®ä¾‹å˜é‡ï¼Œä¹Ÿå°±æ˜¯
   }
 }
