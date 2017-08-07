@@ -9,7 +9,7 @@ public class BubbleSort {
 	 */
 	
 	public static void main(String[] args) {
-		// TODO 自动生成的方法存根
+		
 		int[] data = {49,38,65,97,76,13,27,49,78,3};
 		int n = data.length;
 		while(n>1){
