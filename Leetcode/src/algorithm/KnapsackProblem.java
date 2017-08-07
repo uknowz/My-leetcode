@@ -1,5 +1,5 @@
 package algorithm;
-//0-1±³°üÎÊÌâ¡£Ê±¼äºÍ¿Õ¼ä¸´ÔÓ¶È¶¼ÊÇO(n*W)
+//0-1èƒŒåŒ…é—®é¢˜ã€‚æ—¶é—´å’Œç©ºé—´å¤æ‚åº¦éƒ½æ˜¯O(n*W)
 public class KnapsackProblem {
 
 	/**
@@ -10,9 +10,9 @@ public class KnapsackProblem {
 		for(int i=0;i<n+1;i++){
 			for(int j=0;j<W+1;j++){
 				if(i==0||j==0)
-					c[i][j] = 0;//³õÊ¼ÁÙ½çÌõ¼ş
+					c[i][j] = 0;//åˆå§‹ä¸´ç•Œæ¡ä»¶
 				else{
-					if(w[i-1]<=j){//wi<=w,jÎª±³°ü¸ºÖØ£¨±³°üÖØÁ¿£©
+					if(w[i-1]<=j){//wi<=w,jä¸ºèƒŒåŒ…è´Ÿé‡ï¼ˆèƒŒåŒ…é‡é‡ï¼‰
 						c[i][j] = Math.max(v[i-1]+c[i-1][j-w[i-1]], c[i-1][j]);
 					}else{
 						c[i][j] = c[i-1][j];

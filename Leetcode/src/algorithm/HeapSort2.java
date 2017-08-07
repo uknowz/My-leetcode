@@ -3,7 +3,7 @@ package algorithm;
 import java.util.Arrays;
 
 public class HeapSort2 {
-//ÕâÒ»°æÈı¸öº¯Êı±È½ÏÇåÎú£¬Á½¸ö°æ±¾£¬µİ¹é¿Õ¼ä¸´ÔÓ¶ÈO(logn)£¬·Çµİ¹éO(1)
+//è¿™ä¸€ç‰ˆä¸‰ä¸ªå‡½æ•°æ¯”è¾ƒæ¸…æ™°ï¼Œä¸¤ä¸ªç‰ˆæœ¬ï¼Œé€’å½’ç©ºé—´å¤æ‚åº¦O(logn)ï¼Œéé€’å½’O(1)
 	/**
 	 * @param args
 	 */
@@ -21,10 +21,10 @@ public class HeapSort2 {
         data[j]=tmp;  
     } 
 
-	//´ó¶Ñ»¯µİ¹é°æ
+	//å¤§å †åŒ–é€’å½’ç‰ˆ
 	public void maxHeapify(int[] data,int i){
 		//int n = data.length;
-		int position = i;//¼ÙÉèi×î´ó
+		int position = i;//å‡è®¾iæœ€å¤§
 		int left = i*2+1;
 		int right = i*2+2;
 		if(left<heapSize && data[i]<data[left]){
@@ -37,7 +37,7 @@ public class HeapSort2 {
 			maxHeapify(data, position);
 		}
 	}
-	//·Çµİ¹é°æ
+	//éé€’å½’ç‰ˆ
 	public void maxHeapify2(int[] data,int index){
 		for(int i =index;i<heapSize;){
 			int position = i;
@@ -57,24 +57,24 @@ public class HeapSort2 {
 	}
 	public void buildHeap(int[] data){
 		//int n = data.length;
-		for(int i=heapSize/2-1;i>=0;i--){//´Ó×îºóÒ»¸ö¸¸½Úµã¿ªÊ¼´ó¶Ñ»¯
+		for(int i=heapSize/2-1;i>=0;i--){//ä»æœ€åä¸€ä¸ªçˆ¶èŠ‚ç‚¹å¼€å§‹å¤§å †åŒ–
 			maxHeapify(data, i);
 		}
 	}
 	public void heapsort(int[] data){
 		//int n = data.length;
-		buildHeap(data);//Ö»ĞèÒª½¨Ò»´Î×î´ó¶Ñ
-		System.out.println("¿ªÊ¼ÅÅĞò");
+		buildHeap(data);//åªéœ€è¦å»ºä¸€æ¬¡æœ€å¤§å †
+		System.out.println("å¼€å§‹æ’åº");
 		for(int i=heapSize-1;i>0;i--){			
 			swap(data,0,i);
-			heapSize--;//Ã¿´ÎÅÅĞòĞèÒª½«Êı×é³¤¶È¼õÒ»
+			heapSize--;//æ¯æ¬¡æ’åºéœ€è¦å°†æ•°ç»„é•¿åº¦å‡ä¸€
 			//System.out.println(Arrays.toString(data));
-			maxHeapify(data, 0);//ºóÃæ½»»»ºóÎ¢µ÷´ó¶Ñ»¯¼´¿É
+			maxHeapify(data, 0);//åé¢äº¤æ¢åå¾®è°ƒå¤§å †åŒ–å³å¯
 			
 		}
 	}
 	public static void main(String[] args) {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 		int[] a = {54,35,48,36,27,12,44,44,8,14,26,17,28};
 		new HeapSort2(a);
 		System.out.println(Arrays.toString(a));

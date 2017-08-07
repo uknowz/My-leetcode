@@ -1,6 +1,6 @@
 package algorithm;
 import java.util.*;
-//¶ÔÓÚ¼¸ºõÅÅºÃĞòµÄÊı×é£¬ÇÒĞèÒªµ÷ÕûµÄÎ»ÖÃ²»´óÓÚk£¬ÓÃ¸Ä±àºóµÄ¶ÑÅÅ
+//å¯¹äºå‡ ä¹æ’å¥½åºçš„æ•°ç»„ï¼Œä¸”éœ€è¦è°ƒæ•´çš„ä½ç½®ä¸å¤§äºkï¼Œç”¨æ”¹ç¼–åçš„å †æ’
 //time O(n*logk)
 public class ScaleSort {
 	
@@ -11,11 +11,11 @@ public class ScaleSort {
 		}
 		buildHeap(heap,k);
 		for(int i=0;i<n-k;i++){
-			A[i] = heap[0];//¶ÔAÊı×é±éÀú£¬½«Ğ¡¸ù¶Ñ×îĞ¡ÖµÄÃ³ö
-			heap[0] = A[i+k];//»¬¶¯´°¿Ú£¬½«ÏÂÒ»¸öÔªËØ·ÅÈë¸ù½Úµã£¬±£³Ök´óĞ¡
+			A[i] = heap[0];//å¯¹Aæ•°ç»„éå†ï¼Œå°†å°æ ¹å †æœ€å°å€¼æ‹¿å‡º
+			heap[0] = A[i+k];//æ»‘åŠ¨çª—å£ï¼Œå°†ä¸‹ä¸€ä¸ªå…ƒç´ æ”¾å…¥æ ¹èŠ‚ç‚¹ï¼Œä¿æŒkå¤§å°
 			minHeapify(heap,0,k);
 		}
-		//½øĞĞÆÕÍ¨¶ÑÅÅ£¬Ê×Î²ÔªËØ½»»»£¬ÍÆ³ö×îÖµ
+		//è¿›è¡Œæ™®é€šå †æ’ï¼Œé¦–å°¾å…ƒç´ äº¤æ¢ï¼Œæ¨å‡ºæœ€å€¼
 		for(int i=n-k;i<n;i++){
 			A[i] = heap[0];
 			swap(heap,0,k-1);
@@ -27,7 +27,7 @@ public class ScaleSort {
     
     public void minHeapify(int[] data,int i,int heapsize){
 		//int n = data.length;
-		int position = i;//¼ÙÉèi×î´ó
+		int position = i;//å‡è®¾iæœ€å¤§
 		int left = i*2+1;
 		int right = i*2+2;
 		if(left<heapsize && data[i]>data[left]){
@@ -49,7 +49,7 @@ public class ScaleSort {
     }
     public void buildHeap(int[] data,int heapsize){
 		//int n = data.length;
-		for(int i=heapsize/2-1;i>=0;i--){//´Ó×îºóÒ»¸ö¸¸½Úµã¿ªÊ¼´ó¶Ñ»¯
+		for(int i=heapsize/2-1;i>=0;i--){//ä»æœ€åä¸€ä¸ªçˆ¶èŠ‚ç‚¹å¼€å§‹å¤§å †åŒ–
 			minHeapify(data, i,heapsize);
 		}
 	}

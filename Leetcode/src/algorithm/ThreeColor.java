@@ -1,6 +1,3 @@
-/**
- * 
- */
 package algorithm;
 
 import java.util.Arrays;
@@ -11,13 +8,13 @@ import java.util.Arrays;
  * 2016-10-26
  */
 public class ThreeColor {
-	//·½·¨Ò»£ºÊ¹ÓÃ¸Ä±àºóµÄ¶ÑÅÅĞò time O(n) space O(1),Ô­µØ½»»»ÅÅĞò
+	//æ–¹æ³•ä¸€ï¼šä½¿ç”¨æ”¹ç¼–åçš„å †æ’åº time O(n) space O(1),åŸåœ°äº¤æ¢æ’åº
 	public int[] sortThreeColor(int[] A, int n) {
         // write code here
         int start = 0;
         int end = n-1;
         int current = 0;
-        while(current<=end){//µÈºÅÊÇÈ·±£endÔªËØÄÜ±»±éÀúµ½
+        while(current<=end){//ç­‰å·æ˜¯ç¡®ä¿endå…ƒç´ èƒ½è¢«éå†åˆ°
             if(A[current]==0){
                 swap(A,current,start);
                 current++;
@@ -39,7 +36,7 @@ public class ThreeColor {
         a[i] = a[j];
         a[j] = temp;
     }
-    //Ê¹ÓÃ¼ÆÊıÅÅĞò time O(n) space O(m)
+    //ä½¿ç”¨è®¡æ•°æ’åº time O(n) space O(m)
     public int[] sortThreeColor2(int[] A, int n) {
         // write code here
         int min = A[0];
@@ -54,7 +51,7 @@ public class ThreeColor {
         for(int i=0;i<n;i++){
             c[A[i]-min]++;
         }
-        //ÓÅ»¯ºó£¬¼õÉÙÁËbÊı×é
+        //ä¼˜åŒ–åï¼Œå‡å°‘äº†bæ•°ç»„
         int z = 0;
        	for(int i=0;i<c.length;i++){
             while(c[i]>0){

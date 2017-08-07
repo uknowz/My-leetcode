@@ -8,7 +8,7 @@ public class CountSort {
 	 * @param args
 	 */
 	public void countsort(int[] a,int[] b,int k){	
-		assert (k<0) :"¶ÏÑÔÎÊÌâ";//¶ÏÑÔ
+		assert (k<0) :"æ–­è¨€é—®é¢˜";//æ–­è¨€
 		int[] c = new int[k+1];
 		int n = a.length;
 		for(int i=0;i<n;i++){
@@ -31,7 +31,7 @@ public class CountSort {
             min = Math.min(min,A[i]);
             max = Math.max(max,A[i]);
         }
-        //cÊý×éÎª¼ÆÊýÊý×é£¬ÓÃÀ´±£´æA[i]ÔªËØ³öÏÖ¸öÊý
+        //cæ•°ç»„ä¸ºè®¡æ•°æ•°ç»„ï¼Œç”¨æ¥ä¿å­˜A[i]å…ƒç´ å‡ºçŽ°ä¸ªæ•°
         int[] c = new int[max-min+1];
         int[] b = new int[n];
         for(int i=0;i<n;i++){
@@ -47,7 +47,7 @@ public class CountSort {
         return b;
     }
 	public static void main(String[] args) {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 		CountSort ex = new CountSort();
 		int[] a = {100, 93, 97, 92, 96, 99, 92, 89, 93, 97, 90, 94, 92, 95};
 		//int[] b = new int[a.length];

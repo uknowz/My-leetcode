@@ -7,10 +7,10 @@ import java.util.List;
 public class Dijkstra {
 
 	/**
-	 * @param args,eÈ¨Öµ£¬vÆğµã£¬uÖÕµã
+	 * @param args,eæƒå€¼ï¼Œvèµ·ç‚¹ï¼Œuç»ˆç‚¹
 	 */
 	static int[][] edge;
-	static List<Integer> list;//·Å¶¥µã
+	static List<Integer> list;//æ”¾é¡¶ç‚¹
 	int size;
 	static List<Integer> s = new ArrayList<>();
 	static List<Integer> q = new ArrayList<>();
@@ -27,7 +27,7 @@ public class Dijkstra {
 		if(!list.contains(u))
 			list.add(u);
 	}
-	//ÕÒµ½×î½ü¶¥µãĞèÊ¹ÓÃ¶ÑÓÅÏÈ¶ÓÁĞÀ´ÓÅ»¯O(mlogn)
+	//æ‰¾åˆ°æœ€è¿‘é¡¶ç‚¹éœ€ä½¿ç”¨å †ä¼˜å…ˆé˜Ÿåˆ—æ¥ä¼˜åŒ–O(mlogn)
 	public int close(int[][] edge,int pre,int n,List<Integer> s){
 		int min = Integer.MAX_VALUE;
 		int v  = pre;
@@ -42,7 +42,7 @@ public class Dijkstra {
 		return v;
 	}
 	public static void main(String[] args) {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 		int n = 6 ;
 		Dijkstra ex = new Dijkstra(n);
 		for(int i=0;i<n+1;i++){

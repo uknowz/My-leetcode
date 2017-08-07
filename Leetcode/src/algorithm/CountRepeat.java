@@ -5,7 +5,7 @@ import java.util.Hashtable;
 import java.util.Map;
 import java.util.Set;
 
-//Éè¼ÆËã·¨£¬ÅĞ¶ÏÒ»¸öÊı×éÊÇ·ñÓĞÖØ¸´ÔªËØ£¨Ã»ÓĞ¿Õ¼äÏŞÖÆ£¬ÓÃ¹şÏ£±í£¬·ñÔòÓÃ·Çµİ¹é¶ÑÅÅĞò£©
+//è®¾è®¡ç®—æ³•ï¼Œåˆ¤æ–­ä¸€ä¸ªæ•°ç»„æ˜¯å¦æœ‰é‡å¤å…ƒç´ ï¼ˆæ²¡æœ‰ç©ºé—´é™åˆ¶ï¼Œç”¨å“ˆå¸Œè¡¨ï¼Œå¦åˆ™ç”¨éé€’å½’å †æ’åºï¼‰
 public class CountRepeat {
 
 	/**
@@ -35,7 +35,7 @@ public class CountRepeat {
 	}
 	//time o(nlog) space o(1)
 	boolean repeat3(int[] a){
-		new HeapSort2(a);//Ê¹ÓÃ¶ÑÅÅĞò
+		new HeapSort2(a);//ä½¿ç”¨å †æ’åº
 		for(int i=1;i<a.length;i++){
 			if(a[i-1]==a[i])
 				return true;
@@ -45,7 +45,7 @@ public class CountRepeat {
 		
 	}
 	public static void main(String[] args) {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 		int[] a = {1,3,4,2,7,5,6,7};
 		System.out.println(new CountRepeat().repeat(a));
 		System.out.println(new CountRepeat().repeat2(a));

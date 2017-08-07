@@ -1,7 +1,7 @@
 package algorithm;
 
 import java.util.Arrays;
-//ÓĞ´íÎó
+//æœ‰é”™è¯¯
 public class MergeSort {
 
 	/**
@@ -9,7 +9,7 @@ public class MergeSort {
 	 */
 
 	public MergeSort(int[] arry) {
-		// TODO ×Ô¶¯Éú³ÉµÄ¹¹Ôìº¯Êı´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ„é€ å‡½æ•°å­˜æ ¹
 	
 		int[] result = new int[arry.length];
 		mergesort(arry, result, 0, arry.length-1);
@@ -26,26 +26,26 @@ public class MergeSort {
 		int end2 = end;
 		mergesort(arry, result, start1, end1);
 		mergesort(arry, result, start2, end2);
-		int k = start1;//ÔÚµİ¹éº¯ÊıºóÃæ½â¾öÎÊÌâ£¬ÊÇ¹éÀ´Ê±µÄ²Ù×÷£¬startÎªµİ¹é±äÁ¿start1
-		//´ÓÁ½¸öÊı×éÖĞÈ¡³ö×îĞ¡µÄ·ÅÈëºÏ²¢Êı×é  
+		int k = start1;//åœ¨é€’å½’å‡½æ•°åé¢è§£å†³é—®é¢˜ï¼Œæ˜¯å½’æ¥æ—¶çš„æ“ä½œï¼Œstartä¸ºé€’å½’å˜é‡start1
+		//ä»ä¸¤ä¸ªæ•°ç»„ä¸­å–å‡ºæœ€å°çš„æ”¾å…¥åˆå¹¶æ•°ç»„  
 		while(start1<=end1 && start2<=end2){
 			result[k++] = arry[start1]<arry[start2]?arry[start1++]:arry[start2++];
 		}
-		//Ê£Óà²¿·ÖÒÀ´Î·ÅÈëºÏ²¢Êı×é  
+		//å‰©ä½™éƒ¨åˆ†ä¾æ¬¡æ”¾å…¥åˆå¹¶æ•°ç»„  
 		while(start1<=end1){
 			result[k++] = arry[start1++];
 		}
 		while(start2<=end2){
 			result[k++] = arry[start2++];
 		}
-		//½«ºÏ²¢Êı×éÖĞµÄÄÚÈİ¸´ÖÆ»ØÔ­Êı×é 
+		//å°†åˆå¹¶æ•°ç»„ä¸­çš„å†…å®¹å¤åˆ¶å›åŸæ•°ç»„ 
 		for(k = start;k<=end;k++){
 			arry[k] = result[k];
 		}
 			
 	}
 	public static void main(String[] args) {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 		int[] a ={49,38,65,97,76,13,27,49,78,32};
 		new MergeSort(a);
 		System.out.println(Arrays.toString(a));

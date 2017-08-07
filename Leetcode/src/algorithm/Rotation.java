@@ -1,6 +1,3 @@
-/**
- * 
- */
 package algorithm;
 
 import java.util.ArrayList;
@@ -8,7 +5,7 @@ import java.util.List;
 
 /**
  * @author mingfang.z
- * ÅĞ¶ÏÁ½¸ö×Ö·û´®ÊÇ·ñÎªĞı×ª´Ê
+ * åˆ¤æ–­ä¸¤ä¸ªå­—ç¬¦ä¸²æ˜¯å¦ä¸ºæ—‹è½¬è¯
  * 2016-11-9
  */
 public class Rotation {
@@ -23,10 +20,10 @@ public class Rotation {
         return result;
         
     }
-    //kmpËã·¨ËÑË÷×Ö·û´®aÊÇ·ñ°üº¬×Ö·û´®b
+    //kmpç®—æ³•æœç´¢å­—ç¬¦ä¸²aæ˜¯å¦åŒ…å«å­—ç¬¦ä¸²b
     public boolean kmp(String a,int lena,String b,int lenb){
-        int i = 0;//aË÷Òı
-        int j = 0;//bË÷Òı
+        int i = 0;//aç´¢å¼•
+        int j = 0;//bç´¢å¼•
         while(i<lena){
             if(a.charAt(i)==b.charAt(j)){
                 if(j==lenb-1) 
@@ -37,18 +34,18 @@ public class Rotation {
                 
             }else{
                 if(j==0){
-                    i++;//Ö±½ÓËÑË÷´ÊºóÒÆ
+                    i++;//ç›´æ¥æœç´¢è¯åç§»
                     j=0;
                 }else{
                     int match = partMatch(b.substring(j));
                     i = i-match;
-                    j = 0;//bË÷Òı·µ»ØÍ·×Ö·û
+                    j = 0;//bç´¢å¼•è¿”å›å¤´å­—ç¬¦
                 }
             }
         }
         return false;
     }
-    //Ç°×ººÍºó×º×î³¤¹²ÓĞÔªËØµÄ³¤¶È
+    //å‰ç¼€å’Œåç¼€æœ€é•¿å…±æœ‰å…ƒç´ çš„é•¿åº¦
     public int partMatch(String str){
         int n = str.length();
         List<String> li1 = new ArrayList<>(n-1);
